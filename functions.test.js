@@ -1,6 +1,35 @@
-const { expect } = require('@jest/globals');
+const { expect, beforeEach, beforeAll } = require('@jest/globals');
 const axios = require('axios');
+const { describe } = require('yargs');
 const functions = require('./functions');
+
+// create functions that you'd want to run before and after each test or before and after the testing suite
+const initDatabase = () => console.log('Database Initialized ...');
+const closeDatabase = () => console.log('Database Closed ...');
+const nameCheck = () => console.log('Checking name...');
+
+// runs functions before and after each test
+beforeEach(() => initDatabase());
+afterEach(() => closeDatabase());
+
+// runs each function once before the testing suite and one time after
+beforeAll(() => initDatabase());
+afterAll(() => closeDatabase());
+
+// targets the tests within this block
+describe('Checking names', () => {
+    beforeEach(() => nameCheck()); // runs the name check function before each test
+
+    test('User is jeff', () => {
+        const user = 'jeff';
+        expect(user).toBe('jeff');
+    });
+
+    test('User is karen', () => {
+        const user = 'karen';
+        expect(user).toBe('karen');
+    });
+});
 
 // Testing arithmetic functions using toBe
 test('Adding 2+2 to get 4', () => {

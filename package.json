@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest -- coverage"
+    "test": "jest",
+    "test-coverage": "jest --coverage",
+    "test-watch": "jest --watchAll"
   },
   "author": "Nabil Koney-Laryea",
   "license": "ISC",
