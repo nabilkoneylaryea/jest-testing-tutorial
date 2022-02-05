@@ -1,0 +1,11 @@
+{
+  "name": "jest-testing-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Nabil Koney-Laryea",
+  "license": "ISC"
+}
