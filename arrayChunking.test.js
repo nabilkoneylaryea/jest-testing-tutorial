@@ -1,0 +1,23 @@
+const { expect } = require('@jest/globals');
+const chunkArray = require('./arrayChunking');
+
+// Test to see if function exists
+test('Chunk array function exists', () => {
+    expect(reverseString).toBeDefined();
+});
+
+test('Chunk an array of 10 values with a length of 2', () => {
+    const numbers = [1,2,3,4,5,6,7,8,9,10];
+    const len = 2;
+    const chunkedArr = chunkArr(numbers, len);
+
+    expect(chunkedArr).toEqual([[1,2],[3,4],[5,6],[7,8],[9,10]]);
+});
+
+test('Chunk an array of 11 values with a length of 2', () => {
+    const numbers = [1,2,3,4,5,6,7,8,9,10,11];
+    const len = 2;
+    const chunkedArr = chunkArr(numbers, len);
+
+    expect(chunkedArr).toEqual([[1,2],[3,4],[5,6],[7,8],[9,10]]);
+});
